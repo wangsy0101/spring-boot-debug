@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    initialize: false
+
+  application:
+    name: spring-boot-01
+  profiles:
+    active: '@profileActive@'
+
+
+server:
+  port: 8001
+  servlet:
+    context-path: /01
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: /
+  server:
+    port: 2${server.port}
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+

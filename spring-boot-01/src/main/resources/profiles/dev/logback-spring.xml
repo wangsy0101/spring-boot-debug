@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- 继承模板配置 -->
+    <include resource="logback/logback-common.xml"/>
+    <include resource="logback/logback-console-appender.xml"/>
+
+    <root level="info">
+        <appender-ref ref="ASYNC_STDOUT"/>
+    </root>
+
+    <logger name="cn.wangsy" level="DEBUG"/>
+
+</configuration>
