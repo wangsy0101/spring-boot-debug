@@ -1,8 +1,9 @@
 package cn.wangsy.controller;
 
-import cn.wangsy.common.RespCode;
 import cn.wangsy.common.RespObject;
-import jdk.nashorn.internal.ir.annotations.Immutable;
+import cn.wangsy.service.RateLimitService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,12 +15,22 @@ import java.util.Map;
 
 
 @RestController
+@Slf4j
 public class HelloController {
+
+
+    @Autowired
+    private RateLimitService rateLimitService;
 
 
     @RequestMapping(value = "/v1/hello", method = RequestMethod.GET)
     public String v1(@RequestParam("a") String a) {
-        return "hello world";
+        if (rateLimitService.tryAcquire()) {
+            return "hello world";
+        }else {
+            return "hello world";
+        }
+
     }
 
 
