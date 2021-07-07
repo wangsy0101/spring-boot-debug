@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: spring-boot-02
+  mvc:
+    static-path-pattern: /static/**
+    servlet:
+      load-on-startup: 1
+    contentnegotiation:
+      favor-parameter: true
+  resources:
+    static-locations:
+      - classpath:/images/
+
+
+server:
+  port: 8002
+  servlet:
+    context-path: /
+
+
+myhouse:
+  address: 深圳
+  rooms: [a, b, c]
+  roomList:
+    - aa
+    - bb
+    - cc
+  map: {1: 1, 2: 22}
+  map2:
+    11: 111
+    22: 222
+  area: 100
+
+
+# debug: true
+
