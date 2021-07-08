@@ -1,8 +1,13 @@
 package cn.wangsy;
 
 import cn.wangsy.config.MyConfiguration;
+import cn.wangsy.config.WebConfiguration;
 import cn.wangsy.entity.Account;
 import cn.wangsy.entity.House;
+import cn.wangsy.entity.People;
+import cn.wangsy.service.MyService;
+import cn.wangsy.service.Service1;
+import cn.wangsy.service.Service2;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -40,8 +45,11 @@ public class Application {
 //        boolean account = run.containsBean("account");
 //        System.out.println(account);
 
-        House house = run.getBean(House.class);
-        System.out.println(JSON.toJSONString(house));
+//        House house = run.getBean(House.class);
+//        System.out.println(JSON.toJSONString(house));
+
+
+
 
 
     }

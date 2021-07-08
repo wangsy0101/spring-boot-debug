@@ -22,7 +22,7 @@ import java.util.Map;
 /**
  * Created by wangsy on 2021/7/6
  */
-@Configuration
+@Configuration(proxyBeanMethods = false)
 public class WebConfiguration {
 
 

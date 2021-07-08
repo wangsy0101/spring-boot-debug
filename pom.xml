@@ -58,6 +58,13 @@
             </dependency>
 
             <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <scope>test</scope>
+                <version>2.3.4.RELEASE</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjrt</artifactId>
                 <version>1.8.10</version>
@@ -87,8 +94,6 @@
                 <artifactId>guava</artifactId>
                 <version>23.0</version>
             </dependency>
-
-
 
         </dependencies>
     </dependencyManagement>

@@ -3,6 +3,7 @@ package cn.wangsy.config;
 import cn.wangsy.entity.Account;
 import cn.wangsy.entity.House;
 import cn.wangsy.entity.Person;
+import cn.wangsy.service.Service1;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by wangsy on 2021/7/1
  */
 //@Configuration(proxyBeanMethods = false)
-@Configuration(proxyBeanMethods = true)
+@Configuration()
 @EnableConfigurationProperties(House.class)
 public class MyConfiguration {
 
