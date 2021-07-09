@@ -1,6 +1,10 @@
 spring:
   application:
     name: spring-boot-02
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888
   mvc:
     static-path-pattern: /static/**
     servlet:
