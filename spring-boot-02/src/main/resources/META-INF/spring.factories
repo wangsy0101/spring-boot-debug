@@ -1,0 +1,11 @@
+# Initializers
+org.springframework.context.ApplicationContextInitializer=\
+cn.wangsy.listener.MyApplicationContextInitializer
+
+# Application Listeners
+org.springframework.context.ApplicationListener=\
+cn.wangsy.listener.MyApplicationListener
+
+
+org.springframework.boot.SpringApplicationRunListener=\
+cn.wangsy.listener.MySpringApplicationRunListener

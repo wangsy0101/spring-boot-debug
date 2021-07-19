@@ -5,9 +5,7 @@ import cn.wangsy.config.WebConfiguration;
 import cn.wangsy.entity.Account;
 import cn.wangsy.entity.House;
 import cn.wangsy.entity.People;
-import cn.wangsy.service.MyService;
-import cn.wangsy.service.Service1;
-import cn.wangsy.service.Service2;
+import cn.wangsy.service.*;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
@@ -26,6 +24,29 @@ public class Application {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(Application.class, args);
+
+        // 1、@import 普通java类
+        Service3 service3 = run.getBean(Service3.class);
+        service3.hello();
+
+        // 2、@import 配置类（配置类不用写 @Configuration 注解）
+        Service6 service6 = run.getBean(Service6.class);
+        service6.hello();
+
+        // 3、@import ImportSelector 接口实现类
+        Service4A service4A = run.getBean(Service4A.class);
+        service4A.hello();
+        Service4B service4B = run.getBean(Service4B.class);
+        service4B.hello();
+
+        // 4、@import ImportBeanDefinitionRegistrar 接口实现类
+        Service5A service5A = run.getBean(Service5A.class);
+        service5A.hello();
+        Service5B service5B = run.getBean(Service5B.class);
+        service5B.hello();
+
+
+
 
 //        Account account1 = run.getBean("account", Account.class);
 //        Account account2 = run.getBean("account", Account.class);
@@ -47,9 +68,6 @@ public class Application {
 
 //        House house = run.getBean(House.class);
 //        System.out.println(JSON.toJSONString(house));
-
-
-
 
 
     }
