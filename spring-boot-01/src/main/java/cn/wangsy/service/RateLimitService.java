@@ -31,7 +31,7 @@ public class RateLimitService {
         }else {
             atomicInteger2.incrementAndGet();
         }
-        System.out.println(atomicInteger1.get() + " ==== " + atomicInteger2.get());
+//        System.out.println(atomicInteger1.get() + " ==== " + atomicInteger2.get());
         return result;
     }
 
