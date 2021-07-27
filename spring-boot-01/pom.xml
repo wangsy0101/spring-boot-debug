@@ -95,6 +95,11 @@
             <artifactId>guava</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>cn.wangsy</groupId>
+            <artifactId>spring-boot-common</artifactId>
+        </dependency>
+
     </dependencies>
 
     <profiles>

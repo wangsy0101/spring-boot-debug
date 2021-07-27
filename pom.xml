@@ -18,6 +18,8 @@
         <module>spring-boot-01</module>
         <module>spring-boot-02</module>
         <module>spring-boot-admin</module>
+        <module>spring-boot-mysql</module>
+        <module>spring-boot-common</module>
     </modules>
 
     <properties>
@@ -108,6 +110,11 @@
                 <version>2.3.1</version>
             </dependency>
 
+            <dependency>
+                <groupId>cn.wangsy</groupId>
+                <artifactId>spring-boot-common</artifactId>
+                <version>1.0.0</version>
+            </dependency>
 
 
         </dependencies>
