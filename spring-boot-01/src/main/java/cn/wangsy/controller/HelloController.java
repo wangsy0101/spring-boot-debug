@@ -1,6 +1,8 @@
 package cn.wangsy.controller;
 
 import cn.wangsy.common.RespObject;
+import cn.wangsy.controller.event.PublishSenderA;
+import cn.wangsy.controller.event.PublishSenderB;
 import cn.wangsy.service.RateLimitService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +24,15 @@ public class HelloController {
     @Autowired
     private RateLimitService rateLimitService;
 
+    @Autowired
+    private PublishSenderA publishSenderA;
+
+    @Autowired
+    private PublishSenderB publishSenderB;
 
     @RequestMapping(value = "/v1/hello", method = RequestMethod.GET)
     public String v1(@RequestParam("a") String a) {
+        publishSenderA.publishSender();
         if (rateLimitService.tryAcquire()) {
             return "hello world";
         }else {
@@ -36,6 +44,7 @@ public class HelloController {
 
     @RequestMapping(value = "/v2/hello", method = RequestMethod.GET)
     public RespObject v2(@RequestParam("a") String a) {
+        publishSenderB.publishSender();
         Map map = new HashMap();
         map.put("11", "中国");
         return RespObject.ok("result", map);
