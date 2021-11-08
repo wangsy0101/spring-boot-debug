@@ -6,6 +6,9 @@ spring:
     username: root
     password: 12345678
     driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    servlet:
+      load-on-startup: 1
 
 
 server:
@@ -19,3 +22,10 @@ mybatis:
 
 
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
