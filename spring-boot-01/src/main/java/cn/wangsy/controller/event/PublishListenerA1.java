@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 public class PublishListenerA1 implements ApplicationListener<PublishEventA> {
 
 
-
     @Override
     public void onApplicationEvent(PublishEventA event) {
         PublishBeanA source = (PublishBeanA)event.getSource();

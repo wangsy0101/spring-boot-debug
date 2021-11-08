@@ -26,7 +26,6 @@ public class PublishEventA extends ApplicationEvent {
 
 
 
-
 }
 
 

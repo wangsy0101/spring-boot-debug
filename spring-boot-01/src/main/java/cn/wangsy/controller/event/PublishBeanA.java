@@ -10,8 +10,6 @@ public class PublishBeanA {
 
 
     private Integer id;
-
     private String name;
-
 
 }
