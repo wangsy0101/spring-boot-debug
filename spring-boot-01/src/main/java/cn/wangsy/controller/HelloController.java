@@ -1,5 +1,6 @@
 package cn.wangsy.controller;
 
+import cn.wangsy.annotation.MyAnnotation;
 import cn.wangsy.common.RespObject;
 import cn.wangsy.controller.event.PublishSenderA;
 import cn.wangsy.controller.event.PublishSenderB;
@@ -31,6 +32,7 @@ public class HelloController {
     private PublishSenderB publishSenderB;
 
     @RequestMapping(value = "/v1/hello", method = RequestMethod.GET)
+    @MyAnnotation
     public String v1(@RequestParam("a") String a) {
         publishSenderA.publishSender();
         if (rateLimitService.tryAcquire()) {

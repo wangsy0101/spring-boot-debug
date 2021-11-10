@@ -51,11 +51,11 @@ public class LogAspect {
             long endTimeMillis = System.currentTimeMillis();
             Logger log = LoggerFactory.getLogger(pjp.getTarget().getClass());
 
-//            log.info("method:{}, ip={}, args={}, response={}, cost {} ms",
-//                    request.getServletPath(),
-//                    request.getAttribute("ip"),
-//                    args,
-//                    response, (endTimeMillis - startTimeMillis));
+            log.info("method:{}, ip={}, args={}, response={}, cost {} ms",
+                    request.getServletPath(),
+                    request.getAttribute("ip"),
+                    args,
+                    response, (endTimeMillis - startTimeMillis));
         }
     }
 
